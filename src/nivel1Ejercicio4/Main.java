@@ -1,4 +1,4 @@
-package nivel1Ejercicio3;
+package nivel1Ejercicio4;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,14 +7,13 @@ public class Main {
 
     static void main(String[] args) {
 
-        List<String> mesos = Arrays.asList(
-                "Gener", "Febrer", "Març", "Abril", "Maig", "Juny",
-                "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"
+        List<String> month = Arrays.asList(
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
         );
 
-        System.out.println("Mesos de l'any:");
+        System.out.println("Months of the year:");
 
-        // Imprimim tots els elements amb una expressió lambda
-        mesos.forEach(mes -> System.out.println(mes));
+        month.forEach(System.out::println);
     }
 }

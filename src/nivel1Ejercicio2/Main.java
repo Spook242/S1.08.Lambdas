@@ -1,4 +1,4 @@
-package nivel1Ejercicio1;
+package nivel1Ejercicio2;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,22 +8,17 @@ public class Main {
 
     static void main(String[] args) {
 
-        List<String> paraules = Arrays.asList("cotxe", "avió", "bicicleta", "ordinador", "taula", "sofà", "llibre");
+        List<String> names = Arrays.asList("Lewandowski", "Torres", "Pedri", "Olmo", "Raphinha", "Yamal", "Koundé");
 
-        // Cridem el mètode que filtra les paraules amb 'o'
-        List<String> ambO = filtrarContenenO(paraules);
+        List<String> result = filterOBigger(names);
 
-        // Imprimim el resultat
-        System.out.println("Paraules que contenen la lletra 'o':");
-        ambO.forEach(System.out::println);
+        System.out.println("Names that containing the letter 'o' and more than five letters:");
+        result.forEach(System.out::println);
     }
 
-    /**
-     * Retorna una llista amb totes les cadenes que contenen la lletra 'o'
-     */
-    public static List<String> filtrarContenenO(List<String> llista) {
-        return llista.stream()                   // Convertim la llista en un flux (Stream)
-                .filter(s -> s.contains("o")) // Filtra només les que contenen 'o'
-                .collect(Collectors.toList()); // Reconvertim el resultat a llista
+    public static List<String> filterOBigger(List<String> namesList) {
+        return namesList.stream()
+                .filter(n -> n.contains("o") && n.length() > 5)
+                .collect(Collectors.toList());
     }
 }

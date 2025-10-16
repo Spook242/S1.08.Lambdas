@@ -1,4 +1,9 @@
 package nivel1Ejercicio5;
 
-public class PiValue {
-}
+    @FunctionalInterface
+
+    public interface PiValue {
+
+        double getPiValue();
+    }
+

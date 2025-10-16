@@ -1,31 +1,24 @@
-package nivel1Ejercicio6;
+package nivel1Ejercicio7;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // Creem una llista amb nombres i cadenes de text (com a Strings)
-        List<String> elements = Arrays.asList(
-                "Java", "8", "Lambda", "Pi", "Stream", "42", "Functional", "Code"
-        );
+        List<String> elements = Arrays.asList("This", "Is", "The", "Exercise", "7", "Homework", "08", "Lambda");
 
-        System.out.println("Llista original:");
+        System.out.println("Original list:");
         elements.forEach(System.out::println);
 
-        System.out.println("\nLlista ordenada per longitud (de més curta a més llarga):");
+        System.out.println("\nOrdered list:");
 
-        // Usem Streams i una lambda per ordenar per longitud
-        List<String> ordenada = elements.stream()
-                .sorted(Comparator.comparingInt(String::length))
-                .collect(Collectors.toList());
+        List<String> orderedDesc = elements.stream()
+                .sorted(Comparator.comparingInt(String::length).reversed())
+                .toList();
 
-        // Imprimim el resultat
-        ordenada.forEach(System.out::println);
+        orderedDesc.forEach(System.out::println);
     }
 }
-
