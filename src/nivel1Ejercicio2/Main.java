@@ -18,7 +18,7 @@ public class Main {
 
     public static List<String> filterOBigger(List<String> namesList) {
         return namesList.stream()
-                .filter(n -> n.contains("o") && n.length() > 5)
+                .filter(n -> n.toLowerCase().contains("o") && n.length() > 5)
                 .collect(Collectors.toList());
     }
 }

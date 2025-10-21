@@ -18,7 +18,7 @@ public class Main {
 
     public static List<String> filterO(List<String> namesList) {
         return namesList.stream()
-                .filter(n -> n.contains("o"))
+                .filter(n -> n.toLowerCase().contains("o"))
                 .collect(Collectors.toList());
     }
 }
