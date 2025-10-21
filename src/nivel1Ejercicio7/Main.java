@@ -8,17 +8,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<String> elements = Arrays.asList("This", "Is", "The", "Exercise", "7", "Homework", "08", "Lambda");
+        List<Object> elements = Arrays.asList("This", "Is", "The", "Exercise", 6, "Homework", 8, "Lambda");
 
         System.out.println("Original list:");
         elements.forEach(System.out::println);
 
         System.out.println("\nOrdered list:");
 
-        List<String> orderedDesc = elements.stream()
-                .sorted(Comparator.comparingInt(String::length).reversed())
+        List<Object> ordered = elements.stream()
+                .sorted(Comparator.comparingInt(s -> {
+                    String str = s.toString();
+                    try {
+                        return Integer.parseInt(str);
+                    } catch (NumberFormatException exception) {
+                        return str.length();
+                    }
+                }).reversed())
                 .toList();
 
-        orderedDesc.forEach(System.out::println);
+        ordered.forEach(System.out::println);
     }
 }
